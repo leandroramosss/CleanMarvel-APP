@@ -32,6 +32,10 @@ class HeroesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderWidth = 0.5
+        
         heroImageView.layer.borderWidth = 1.0
         heroImageView.layer.masksToBounds = false
         heroImageView.layer.borderColor = UIColor.white.cgColor

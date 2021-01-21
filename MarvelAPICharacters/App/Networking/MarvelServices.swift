@@ -52,7 +52,7 @@ final class MarvelServices {
     }
     
     func getAllCharacters(completion: @escaping (_ entity: [Character]?, _ error: Error?) -> Void) {
-        let url = getLink(url: baseURL+"characters?", urlType: .default)
+        let url = getLink(url: baseURL+"characters?&limit=100&offset=0", urlType: .default)
         print(url)
         request(with: url, type: MarvelServiceResponse<Character>.self) { (result, _ ) in
             return completion(result?.data?.results, nil)
@@ -63,7 +63,7 @@ final class MarvelServices {
         let url = getLink(url: url, urlType: .image)
         request(with: url, type: MarvelServiceResponse<Comic>.self) { (result, _) in
             guard let data = result?.data, let thumbnail = data.results![0].thumbnail else { return }
-            let imageUrl = thumbnail.path + protaitImage + thumbnail.thumbnailExtension
+            let imageUrl = thumbnail.path + landscapeImage + thumbnail.thumbnailExtension
             return completion(imageUrl, nil)
         }
     }

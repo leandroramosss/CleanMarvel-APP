@@ -152,6 +152,7 @@
 		5263494C25B86AC000F71573 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				52D7613425B9D8620006CF38 /* DetailsPage */,
 				5263494D25B86AD000F71573 /* LandingPage */,
 			);
 			path = Scenes;
@@ -255,6 +256,13 @@
 				52D7611F25B9A2770006CF38 /* HeroesTableDelegate.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		52D7613425B9D8620006CF38 /* DetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsPage;
 			sourceTree = "<group>";
 		};
 		6FE4E1AB57DF53767005C1E2 /* Frameworks */ = {

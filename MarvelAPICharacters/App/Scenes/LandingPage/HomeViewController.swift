@@ -67,6 +67,15 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewControllerDisplayLogic {
     
     func displayFetchedHeroesData(viewModel: HomeViewControllerModels.FetchCharacterData.ViewModel) {
+        tableViewDataSource?.heroData = viewModel.displayedCharacters
+        
+        if viewModel.displayedCharacters.count == 0 {
+            print("no result show")
+        } else {
+            print("results hide")
+        }
+        
+        tableView.reloadData()
         
     }
     
@@ -78,6 +87,7 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
         } else {
             print("results hide")
         }
+//        tableView.isHidden = false
         tableView.reloadData()
     }
     
