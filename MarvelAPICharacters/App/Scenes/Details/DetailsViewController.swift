@@ -10,6 +10,9 @@ import UIKit
 
 protocol DetailsViewControllerDisplayLogic: class {
     func displayedCharacter(viewModel: DetailsView.SelectedCharacter.ViewModel)
+    func requestComics(viewModel: DetailsView.CollectionViewData.ViewModel)
+    func requestSeries(viewModel: DetailsView.CollectionViewData.ViewModel)
+    func requestEvents(viewModel: DetailsView.CollectionViewData.ViewModel)
 }
 
 class DetailsViewController: UITableViewController {
@@ -72,18 +75,39 @@ class DetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 44
         setupCollection()
         interactor?.requestCharacterData(request: DetailsView.SelectedCharacter.Request(character: selectedCharacter))
     }
     
     private func setupCollection() {
-        
+        interactor?.requestComics(request: DetailsView.CollectionViewData.Request(items: selectedCharacter.comics?.items))
+        interactor?.requestSeries(request: DetailsView.CollectionViewData.Request(items: selectedCharacter.series?.items))
+        interactor?.requestEvents(request: DetailsView.CollectionViewData.Request(items: selectedCharacter.events?.items))
     }
     
 }
 
 extension DetailsViewController: DetailsViewControllerDisplayLogic {
+    
+    func requestComics(viewModel: DetailsView.CollectionViewData.ViewModel) {
+        comicDataSource = viewModel.dataSource
+        comicsCollectionView.delegate = viewModel.delegate
+        comicsCollectionView.dataSource = comicDataSource
+    }
+    
+    func requestSeries(viewModel: DetailsView.CollectionViewData.ViewModel) {
+        seriesDataSource = viewModel.dataSource
+        seriesCollectionView.dataSource = viewModel.dataSource
+        seriesCollectionView.delegate = viewModel.delegate
+    }
+    
+    func requestEvents(viewModel: DetailsView.CollectionViewData.ViewModel) {
+        eventDataSource = viewModel.dataSource
+        eventsCollectionView.delegate = viewModel.delegate
+        eventsCollectionView.dataSource = viewModel.dataSource
+    }
+    
     
     func displayedCharacter(viewModel: DetailsView.SelectedCharacter.ViewModel) {
         self.title = viewModel.name

@@ -36,4 +36,28 @@ enum DetailsView {
         
     }
     
+    enum CollectionViewData {
+        
+        struct Request {
+            
+            var items: [Item]?
+            
+        }
+        
+        struct Response {
+            
+            var dataSource: ResourceCollectionDataSource
+            var delegate: ResourceCollectionDelegate
+
+        }
+        
+        struct ViewModel {
+            
+            var dataSource: ResourceCollectionDataSource
+            var delegate: ResourceCollectionDelegate
+            
+        }
+        
+    }
+    
 }

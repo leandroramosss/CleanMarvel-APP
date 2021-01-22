@@ -6,7 +6,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.7.2)
   - CryptoSwift
-  - Kingfisher
+  - Kingfisher (= 4.7.0)
 
 SPEC REPOS:
   trunk:
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
 
-PODFILE CHECKSUM: 51f5adc5feccee87919d0df302daaca64c3c35e4
+PODFILE CHECKSUM: fb115bdda764691baa1427e4b68ac50d47a0bd91
 
 COCOAPODS: 1.9.3

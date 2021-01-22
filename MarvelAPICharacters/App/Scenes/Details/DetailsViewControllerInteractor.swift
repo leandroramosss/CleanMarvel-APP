@@ -10,6 +10,9 @@ import Kingfisher
 
 protocol DetailsViewControllerBusinessLogic {
     func requestCharacterData(request: DetailsView.SelectedCharacter.Request)
+    func requestComics(request: DetailsView.CollectionViewData.Request)
+    func requestSeries(request: DetailsView.CollectionViewData.Request)
+    func requestEvents(request: DetailsView.CollectionViewData.Request)
 }
 
 protocol DetailsViewControllerDataStore {
@@ -30,6 +33,21 @@ class DetailsViewControllerInteractor: DetailsViewControllerDataStore {
 }
 
 extension DetailsViewControllerInteractor: DetailsViewControllerBusinessLogic {
+    func requestComics(request: DetailsView.CollectionViewData.Request) {
+        guard let items = request.items else { return }
+        presenter?.presentComics(request: worker.collectionsResponse(item: items))
+    }
+    
+    func requestSeries(request: DetailsView.CollectionViewData.Request) {
+        guard let items = request.items else { return }
+        presenter?.presentSeries(request: worker.collectionsResponse(item: items))
+    }
+    
+    func requestEvents(request: DetailsView.CollectionViewData.Request) {
+        guard let items = request.items else { return }
+        presenter?.presentEvents(request: worker.collectionsResponse(item: items))
+    }
+    
     
     func requestCharacterData(request: DetailsView.SelectedCharacter.Request) {
         selectedCharacter = request.character

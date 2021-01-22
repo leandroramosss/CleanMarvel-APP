@@ -9,7 +9,7 @@ target 'MarvelAPICharacters' do
 
   pod 'Alamofire', '4.7.2'
   pod 'CryptoSwift'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '4.7.0'
 
   target 'MarvelAPICharactersTests' do
     inherit! :search_paths
