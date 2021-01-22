@@ -8,7 +8,7 @@
 import Foundation
 
 @objc protocol DetailsViewControllerRoutingLogic {
-    
+
 }
 
 protocol DetailsViewControllerDataPassing {
@@ -21,6 +21,8 @@ class DetailsViewControllerRouter: NSObject, DetailsViewControllerRoutingLogic, 
     
     weak var viewController: DetailsViewController?
     var dataStore: DetailsViewControllerDataStore?
+    
+    
     
     
 }

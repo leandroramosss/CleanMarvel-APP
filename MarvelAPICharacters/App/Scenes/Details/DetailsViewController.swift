@@ -17,6 +17,14 @@ class DetailsViewController: UITableViewController {
     var router: (NSObjectProtocol & DetailsViewControllerRoutingLogic & DetailsViewControllerDataPassing)?
     var selectedCharacter: Character!
     
+    @IBOutlet var heroImageView: UIImageView!
+    @IBOutlet var heroNameLabel: UILabel!
+    @IBOutlet var heroInfoLabel: UILabel!
+    
+    @IBOutlet var comicsCollectionView: UICollectionView!
+    @IBOutlet var seriesCollectionView: UICollectionView!
+    @IBOutlet var eventsCollectionView: UICollectionView!
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()

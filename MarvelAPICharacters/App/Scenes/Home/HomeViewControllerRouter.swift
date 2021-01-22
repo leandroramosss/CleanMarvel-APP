@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 @objc protocol HomeViewControllerRoutingLogic {
     func passDataToDetail()
@@ -21,8 +22,12 @@ class HomeViewControllerRouter: NSObject, HomeViewControllerRoutingLogic, HomeVi
     var dataStore: HomeViewControllerDataStore?
     
     func passDataToDetail() {
-        
+        if let selectedIndexPath = viewController?.tableView.indexPathForSelectedRow {
+            if let selectedCharacter = dataStore?.characters![selectedIndexPath.row] {
+                let detailsViewController: DetailsViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
+                detailsViewController.selectedCharacter = selectedCharacter
+                viewController?.navigationController?.pushViewController(detailsViewController, animated: true)
+            }
+        }
     }
-    
-    
 }

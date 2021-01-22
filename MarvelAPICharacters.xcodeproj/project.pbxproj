@@ -31,6 +31,7 @@
 		52BC225925BAEEC100E4FA00 /* DetailsViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC225825BAEEC100E4FA00 /* DetailsViewControllerPresenter.swift */; };
 		52BC225E25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC225D25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift */; };
 		52BC226325BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC226225BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift */; };
+		52BC227125BB0DC800E4FA00 /* Extension+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */; };
 		52D760C925B8919F0006CF38 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760C825B8919F0006CF38 /* Comic.swift */; };
 		52D760CE25B8BF000006CF38 /* HomeViewControllerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760CD25B8BF000006CF38 /* HomeViewControllerWorker.swift */; };
 		52D760F825B8EF5C0006CF38 /* Extension+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */; };
@@ -90,6 +91,7 @@
 		52BC225825BAEEC100E4FA00 /* DetailsViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerPresenter.swift; sourceTree = "<group>"; };
 		52BC225D25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerWorker.swift; sourceTree = "<group>"; };
 		52BC226225BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerRouter.swift; sourceTree = "<group>"; };
+		52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Storyboard.swift"; sourceTree = "<group>"; };
 		52D760C825B8919F0006CF38 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		52D760CD25B8BF000006CF38 /* HomeViewControllerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerWorker.swift; sourceTree = "<group>"; };
 		52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ImageView.swift"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				5263491D25B8558800F71573 /* Extension+String.swift */,
 				52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */,
+				52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				5263491E25B8558800F71573 /* Extension+String.swift in Sources */,
 				52BC225E25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift in Sources */,
 				52895EC725B6298200942F92 /* ViewController.swift in Sources */,
+				52BC227125BB0DC800E4FA00 /* Extension+Storyboard.swift in Sources */,
 				52895EC325B6298200942F92 /* AppDelegate.swift in Sources */,
 				5263494F25B86B0500F71573 /* HomeViewController.swift in Sources */,
 				52BC224F25BAEA7F00E4FA00 /* DetailsViewController.swift in Sources */,
