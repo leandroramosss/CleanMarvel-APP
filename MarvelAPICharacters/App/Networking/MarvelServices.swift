@@ -88,7 +88,7 @@ final class MarvelServices {
     }
     
     static func getImageURL(downloadURL: String, extension: String) -> URL? {
-        let path = downloadURL + protaitImage + `extension`
+        let path = downloadURL + landscapeImage + `extension`
         guard let url = URL(string: path) else { return nil }
         return url
     }

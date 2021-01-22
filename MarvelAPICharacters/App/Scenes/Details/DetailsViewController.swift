@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol DetailsViewControllerDisplayLogic: class {
-    
+    func displayedCharacter(viewModel: DetailsView.SelectedCharacter.ViewModel)
 }
 
 class DetailsViewController: UITableViewController {
@@ -24,6 +24,18 @@ class DetailsViewController: UITableViewController {
     @IBOutlet var comicsCollectionView: UICollectionView!
     @IBOutlet var seriesCollectionView: UICollectionView!
     @IBOutlet var eventsCollectionView: UICollectionView!
+    
+    @IBOutlet var collectionOfViews: Array<UITableViewCell>?
+    @IBOutlet var descriptionCell: UITableViewCell!
+    
+    var comicDataSource: ResourceCollectionDataSource?
+    weak public var comicDelegate: ResourceCollectionDelegate?
+    
+    var seriesDataSource: ResourceCollectionDataSource?
+    weak public var seriesDelegate: ResourceCollectionDelegate?
+    
+    var eventDataSource: ResourceCollectionDataSource?
+    weak var eventDelegate: ResourceCollectionDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -59,11 +71,31 @@ class DetailsViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.estimatedRowHeight = 44
+        setupCollection()
+        interactor?.requestCharacterData(request: DetailsView.SelectedCharacter.Request(character: selectedCharacter))
+    }
+    
+    private func setupCollection() {
         
     }
     
 }
 
 extension DetailsViewController: DetailsViewControllerDisplayLogic {
+    
+    func displayedCharacter(viewModel: DetailsView.SelectedCharacter.ViewModel) {
+        self.title = viewModel.name
+        self.heroImageView.kf.setImage(with: viewModel.thumbnailResource)
+        self.heroNameLabel.text = viewModel.name
+        if viewModel.description == "" {
+            self.heroInfoLabel.text = "No Description"
+            descriptionCell.layer.bounds.size = CGSize(width: descriptionCell.layer.bounds.width, height: 50)
+        } else {
+            self.heroInfoLabel.text = viewModel.description
+        }
+    }
+    
     
 }

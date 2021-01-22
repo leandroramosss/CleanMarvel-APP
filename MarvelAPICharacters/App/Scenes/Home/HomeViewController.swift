@@ -60,6 +60,7 @@ class HomeViewController: UIViewController {
         interactor?.getAllCharacters(request: requests)
         configureTableView()
         searchBar.delegate = self
+        tableView.delegate = self
     }
     
 }

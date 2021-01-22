@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Kingfisher
 
 protocol DetailsViewControllerBusinessLogic {
-    
+    func requestCharacterData(request: DetailsView.SelectedCharacter.Request)
 }
 
 protocol DetailsViewControllerDataStore {
@@ -29,5 +30,14 @@ class DetailsViewControllerInteractor: DetailsViewControllerDataStore {
 }
 
 extension DetailsViewControllerInteractor: DetailsViewControllerBusinessLogic {
+    
+    func requestCharacterData(request: DetailsView.SelectedCharacter.Request) {
+        selectedCharacter = request.character
+        guard let thumbnail = request.character.thumbnail else { return }
+        guard let url = MarvelServices.getImageURL(downloadURL: thumbnail.path, extension: thumbnail.thumbnailExtension) else { return }
+        let resource = ImageResource(downloadURL: url)
+        let response = DetailsView.SelectedCharacter.Response(name: request.character.name, thumbnailResource: resource, description: request.character.description)
+        presenter?.presentCharacter(response: response)
+    }
     
 }

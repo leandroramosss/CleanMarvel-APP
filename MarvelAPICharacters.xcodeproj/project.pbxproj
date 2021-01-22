@@ -32,6 +32,11 @@
 		52BC225E25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC225D25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift */; };
 		52BC226325BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC226225BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift */; };
 		52BC227125BB0DC800E4FA00 /* Extension+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */; };
+		52BC227725BB347E00E4FA00 /* ResourceCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC227525BB347E00E4FA00 /* ResourceCollectionDataSource.swift */; };
+		52BC227E25BB360800E4FA00 /* ResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC227C25BB360800E4FA00 /* ResourceCollectionViewCell.swift */; };
+		52BC227F25BB360800E4FA00 /* ResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BC227D25BB360800E4FA00 /* ResourceCollectionViewCell.xib */; };
+		52BC228D25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC228C25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift */; };
+		52BC22A525BB50E700E4FA00 /* DetailsViewControllerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC22A425BB50E700E4FA00 /* DetailsViewControllerModels.swift */; };
 		52D760C925B8919F0006CF38 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760C825B8919F0006CF38 /* Comic.swift */; };
 		52D760CE25B8BF000006CF38 /* HomeViewControllerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760CD25B8BF000006CF38 /* HomeViewControllerWorker.swift */; };
 		52D760F825B8EF5C0006CF38 /* Extension+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */; };
@@ -92,6 +97,11 @@
 		52BC225D25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerWorker.swift; sourceTree = "<group>"; };
 		52BC226225BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerRouter.swift; sourceTree = "<group>"; };
 		52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Storyboard.swift"; sourceTree = "<group>"; };
+		52BC227525BB347E00E4FA00 /* ResourceCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCollectionDataSource.swift; sourceTree = "<group>"; };
+		52BC227C25BB360800E4FA00 /* ResourceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewCell.swift; sourceTree = "<group>"; };
+		52BC227D25BB360800E4FA00 /* ResourceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		52BC228C25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCollectionDelegate.swift; sourceTree = "<group>"; };
+		52BC22A425BB50E700E4FA00 /* DetailsViewControllerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerModels.swift; sourceTree = "<group>"; };
 		52D760C825B8919F0006CF38 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		52D760CD25B8BF000006CF38 /* HomeViewControllerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerWorker.swift; sourceTree = "<group>"; };
 		52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ImageView.swift"; sourceTree = "<group>"; };
@@ -267,6 +277,10 @@
 				52D7611125B99AD30006CF38 /* HeroesTableViewCell.xib */,
 				52D7611A25B99EAE0006CF38 /* HeroesTableDataSource.swift */,
 				52D7611F25B9A2770006CF38 /* HeroesTableDelegate.swift */,
+				52BC227C25BB360800E4FA00 /* ResourceCollectionViewCell.swift */,
+				52BC227D25BB360800E4FA00 /* ResourceCollectionViewCell.xib */,
+				52BC227525BB347E00E4FA00 /* ResourceCollectionDataSource.swift */,
+				52BC228C25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -279,6 +293,7 @@
 				52BC225825BAEEC100E4FA00 /* DetailsViewControllerPresenter.swift */,
 				52BC225D25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift */,
 				52BC226225BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift */,
+				52BC22A425BB50E700E4FA00 /* DetailsViewControllerModels.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -416,6 +431,7 @@
 			files = (
 				52895ECF25B6298600942F92 /* LaunchScreen.storyboard in Resources */,
 				52D7611325B99AD30006CF38 /* HeroesTableViewCell.xib in Resources */,
+				52BC227F25BB360800E4FA00 /* ResourceCollectionViewCell.xib in Resources */,
 				52895ECC25B6298600942F92 /* Assets.xcassets in Resources */,
 				52895ECA25B6298200942F92 /* Main.storyboard in Resources */,
 			);
@@ -545,11 +561,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BC227E25BB360800E4FA00 /* ResourceCollectionViewCell.swift in Sources */,
 				5263496525B86D3000F71573 /* Character.swift in Sources */,
 				52D760CE25B8BF000006CF38 /* HomeViewControllerWorker.swift in Sources */,
 				5263492425B859D300F71573 /* Constants.swift in Sources */,
 				5263497425B87AAC00F71573 /* HomeViewControllerRouter.swift in Sources */,
 				52BC226325BAEF8E00E4FA00 /* DetailsViewControllerRouter.swift in Sources */,
+				52BC228D25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift in Sources */,
 				5263496A25B877A800F71573 /* HomeViewControllerInteractor.swift in Sources */,
 				52D7612025B9A2770006CF38 /* HeroesTableDelegate.swift in Sources */,
 				52D760F825B8EF5C0006CF38 /* Extension+ImageView.swift in Sources */,
@@ -561,6 +579,7 @@
 				52895EC725B6298200942F92 /* ViewController.swift in Sources */,
 				52BC227125BB0DC800E4FA00 /* Extension+Storyboard.swift in Sources */,
 				52895EC325B6298200942F92 /* AppDelegate.swift in Sources */,
+				52BC227725BB347E00E4FA00 /* ResourceCollectionDataSource.swift in Sources */,
 				5263494F25B86B0500F71573 /* HomeViewController.swift in Sources */,
 				52BC224F25BAEA7F00E4FA00 /* DetailsViewController.swift in Sources */,
 				52D760C925B8919F0006CF38 /* Comic.swift in Sources */,
@@ -569,6 +588,7 @@
 				5263492925B85A0E00F71573 /* MarvelServices.swift in Sources */,
 				52BC225925BAEEC100E4FA00 /* DetailsViewControllerPresenter.swift in Sources */,
 				52895EC525B6298200942F92 /* SceneDelegate.swift in Sources */,
+				52BC22A525BB50E700E4FA00 /* DetailsViewControllerModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
