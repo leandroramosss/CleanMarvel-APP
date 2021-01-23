@@ -41,7 +41,7 @@ class HeroesTableViewCell: UITableViewCell {
         heroImageView.layer.borderColor = UIColor.white.cgColor
         heroImageView.layer.cornerRadius = heroImageView.frame.size.width / 2
         heroImageView.clipsToBounds = true
-        favoriteHeroButton.tintColor = .black
+        favoriteHeroButton.tintColor = .white
 
     }
     

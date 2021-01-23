@@ -15,7 +15,7 @@ fileprivate enum URLType: String {
     case `default` = "&"
 }
 
-private let protaitImage = "/portrait_xlarge."
+private let protaitImage = "portrait_uncanny.jpg"
 private let landscapeImage = "/landscape_large."
 
 final class MarvelServices {
