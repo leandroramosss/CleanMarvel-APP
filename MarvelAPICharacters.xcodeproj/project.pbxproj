@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		058478415B8CB4388855E035 /* Pods_MarvelAPICharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47E23091D731B4DA40089E /* Pods_MarvelAPICharacters.framework */; };
 		5048BA0393B3B5F568B3C3FF /* Pods_MarvelAPICharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B783DAB671506F53FFDDAC0C /* Pods_MarvelAPICharactersTests.framework */; };
+		523D264B25BC71DA006E5B2F /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523D264A25BC71DA006E5B2F /* Extension+View.swift */; };
 		5263491E25B8558800F71573 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263491D25B8558800F71573 /* Extension+String.swift */; };
 		5263492425B859D300F71573 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263492325B859D300F71573 /* Constants.swift */; };
 		5263492925B85A0E00F71573 /* MarvelServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263492825B85A0E00F71573 /* MarvelServices.swift */; };
@@ -68,6 +69,7 @@
 		151AC42C135909CA12C7911B /* Pods-MarvelAPICharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPICharactersTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelAPICharactersTests/Pods-MarvelAPICharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		2557D02F668A21894520507B /* Pods-MarvelAPICharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPICharacters.release.xcconfig"; path = "Target Support Files/Pods-MarvelAPICharacters/Pods-MarvelAPICharacters.release.xcconfig"; sourceTree = "<group>"; };
 		26B432D51DDDB604F32AF72F /* Pods_MarvelAPICharacters_MarvelAPICharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAPICharacters_MarvelAPICharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523D264A25BC71DA006E5B2F /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		5263491D25B8558800F71573 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		5263492325B859D300F71573 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5263492825B85A0E00F71573 /* MarvelServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelServices.swift; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		52D760C825B8919F0006CF38 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		52D760CD25B8BF000006CF38 /* HomeViewControllerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerWorker.swift; sourceTree = "<group>"; };
 		52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ImageView.swift"; sourceTree = "<group>"; };
-		52D7611025B99AD30006CF38 /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeroesTableViewCell.swift; path = MarvelAPICharacters/App/CustomCells/HeroesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		52D7611025B99AD30006CF38 /* HeroesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeroesTableViewCell.swift; path = MarvelAPICharacters/App/TableView/HeroesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		52D7611125B99AD30006CF38 /* HeroesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewCell.xib; sourceTree = "<group>"; };
 		52D7611A25B99EAE0006CF38 /* HeroesTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableDataSource.swift; sourceTree = "<group>"; };
 		52D7611F25B9A2770006CF38 /* HeroesTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableDelegate.swift; sourceTree = "<group>"; };
@@ -145,12 +147,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52328BCA25BC634500799E0E /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				52D7611025B99AD30006CF38 /* HeroesTableViewCell.swift */,
+				52D7611125B99AD30006CF38 /* HeroesTableViewCell.xib */,
+				52D7611A25B99EAE0006CF38 /* HeroesTableDataSource.swift */,
+				52D7611F25B9A2770006CF38 /* HeroesTableDelegate.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		526348EC25B6FD3A00F71573 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				5263491D25B8558800F71573 /* Extension+String.swift */,
 				52D760F725B8EF5C0006CF38 /* Extension+ImageView.swift */,
 				52BC227025BB0DC800E4FA00 /* Extension+Storyboard.swift */,
+				523D264A25BC71DA006E5B2F /* Extension+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,7 +266,8 @@
 		52895EF525B62AFF00942F92 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				52D760DA25B8E82D0006CF38 /* CustomCells */,
+				52328BCA25BC634500799E0E /* TableView */,
+				52D760DA25B8E82D0006CF38 /* CollectionView */,
 				5263494C25B86AC000F71573 /* Scenes */,
 				5263492225B859C600F71573 /* Constants */,
 				5263491125B84D8100F71573 /* Models */,
@@ -270,19 +285,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		52D760DA25B8E82D0006CF38 /* CustomCells */ = {
+		52D760DA25B8E82D0006CF38 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				52D7611025B99AD30006CF38 /* HeroesTableViewCell.swift */,
-				52D7611125B99AD30006CF38 /* HeroesTableViewCell.xib */,
-				52D7611A25B99EAE0006CF38 /* HeroesTableDataSource.swift */,
-				52D7611F25B9A2770006CF38 /* HeroesTableDelegate.swift */,
 				52BC227C25BB360800E4FA00 /* ResourceCollectionViewCell.swift */,
 				52BC227D25BB360800E4FA00 /* ResourceCollectionViewCell.xib */,
 				52BC227525BB347E00E4FA00 /* ResourceCollectionDataSource.swift */,
 				52BC228C25BB3E2300E4FA00 /* ResourceCollectionDelegate.swift */,
 			);
-			path = CustomCells;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		52D7613425B9D8620006CF38 /* Details */ = {
@@ -578,6 +589,7 @@
 				52BC225E25BAEF5C00E4FA00 /* DetailsViewControllerWorker.swift in Sources */,
 				52895EC725B6298200942F92 /* ViewController.swift in Sources */,
 				52BC227125BB0DC800E4FA00 /* Extension+Storyboard.swift in Sources */,
+				523D264B25BC71DA006E5B2F /* Extension+View.swift in Sources */,
 				52895EC325B6298200942F92 /* AppDelegate.swift in Sources */,
 				52BC227725BB347E00E4FA00 /* ResourceCollectionDataSource.swift in Sources */,
 				5263494F25B86B0500F71573 /* HomeViewController.swift in Sources */,

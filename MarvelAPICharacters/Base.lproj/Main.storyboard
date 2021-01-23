@@ -17,34 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Digite o nome do herói (inglês)" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Wj-99P">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <color key="barTintColor" systemColor="systemRedColor"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRB-aZ-a1Y">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-Zq-jIR">
-                                <rect key="frame" x="0.0" y="196" width="414" height="700"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="WSt-WI-SRO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Digite o nome do herói (inglês)" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-Wj-99P">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="barTintColor" systemColor="systemRedColor"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o4C-We-kUo"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
+                            <constraint firstItem="o4C-We-kUo" firstAttribute="bottom" secondItem="WRB-aZ-a1Y" secondAttribute="bottom" id="0Op-5l-zPh"/>
+                            <constraint firstItem="o4C-We-kUo" firstAttribute="trailing" secondItem="WRB-aZ-a1Y" secondAttribute="trailing" id="CLi-O3-ZVA"/>
                             <constraint firstItem="yA2-Zq-jIR" firstAttribute="trailing" secondItem="o4C-We-kUo" secondAttribute="trailing" id="JMI-tT-XQX"/>
                             <constraint firstItem="yA2-Zq-jIR" firstAttribute="top" secondItem="dbM-Wj-99P" secondAttribute="bottom" id="LP6-or-AFY"/>
                             <constraint firstItem="yA2-Zq-jIR" firstAttribute="leading" secondItem="o4C-We-kUo" secondAttribute="leading" id="StH-1P-SS2"/>
                             <constraint firstItem="dbM-Wj-99P" firstAttribute="leading" secondItem="o4C-We-kUo" secondAttribute="leading" id="ThD-vl-20I"/>
+                            <constraint firstItem="WRB-aZ-a1Y" firstAttribute="leading" secondItem="o4C-We-kUo" secondAttribute="leading" id="aGi-uY-QGF"/>
                             <constraint firstItem="dbM-Wj-99P" firstAttribute="trailing" secondItem="o4C-We-kUo" secondAttribute="trailing" id="b1f-Pt-dz6"/>
                             <constraint firstAttribute="bottom" secondItem="yA2-Zq-jIR" secondAttribute="bottom" id="cOS-jY-rNr"/>
+                            <constraint firstItem="WRB-aZ-a1Y" firstAttribute="top" secondItem="dbM-Wj-99P" secondAttribute="bottom" id="qvx-5d-QVa"/>
                             <constraint firstItem="dbM-Wj-99P" firstAttribute="top" secondItem="o4C-We-kUo" secondAttribute="top" id="zyP-yU-Qug"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="h3S-h7-jBQ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="h3S-h7-jBQ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="WSt-WI-SRO" id="h8Q-v0-xgr"/>
                         <outlet property="searchBar" destination="dbM-Wj-99P" id="BZw-SR-CsS"/>
                         <outlet property="tableView" destination="yA2-Zq-jIR" id="Ypr-9f-KWx"/>
                     </connections>
@@ -359,6 +374,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

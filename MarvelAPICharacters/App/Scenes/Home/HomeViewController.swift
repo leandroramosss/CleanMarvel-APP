@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var errorView: RoundBorderView!
     
     var tableViewDataSource: HeroesTableDataSource?
     var tableViewDelegate: HeroesTableDelegate?
@@ -33,12 +35,12 @@ class HomeViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-        
+    
     private func setup() {
         let viewController = self
         let interactor = HomeViewControllerInteractor()
@@ -61,21 +63,32 @@ class HomeViewController: UIViewController {
         configureTableView()
         searchBar.delegate = self
         tableView.delegate = self
+//        errorView.hide()
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
     
 }
 
 extension HomeViewController: HomeViewControllerDisplayLogic {
+    func didtapAtFavorite(cell: HeroesTableViewCell) {
+        print(cell.heroNameLabel.text!)
+        print("in datasource first, and themin controller")
+        
+        
+    }
+    
     
     func displayFetchedHeroesData(viewModel: HomeViewControllerModels.FetchCharacterData.ViewModel) {
         tableViewDataSource?.heroData = viewModel.displayedCharacters
         
         if viewModel.displayedCharacters.count == 0 {
-            print("no result show")
+//            errorView.show()
         } else {
-            print("results hide")
+//            errorView.hide()
         }
-        
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
         tableView.reloadData()
         
     }
@@ -88,7 +101,8 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
         } else {
             print("results hide")
         }
-//        tableView.isHidden = false
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
         tableView.reloadData()
     }
     
@@ -125,6 +139,7 @@ extension HomeViewController: UISearchBarDelegate {
             dismissKeyboard()
             return
         }
+        activityIndicator.startAnimating()
         let request = HomeViewControllerModels.FetchData.Request(characterToSearch: searchText)
         interactor?.serachCharacter(request: request)
         dismissKeyboard()

@@ -8,12 +8,20 @@
 import UIKit
 import Kingfisher
 
+protocol FavoriteDelegate: class {
+    func setFavorite(sender: HeroesTableViewCell)
+}
+
 class HeroesTableViewCell: UITableViewCell {
     
+    var viewController: HomeViewController?
+    var isFavorited: Bool = false
     
     @IBOutlet weak var favoriteHeroButton: UIButton!
     @IBOutlet weak var heroImageView: UIImageView!
     @IBOutlet weak var heroNameLabel: UILabel!
+    
+    weak var delegate: FavoriteDelegate?
     
     var heroesData: Character! {
         didSet {
@@ -44,7 +52,20 @@ class HeroesTableViewCell: UITableViewCell {
         favoriteHeroButton.tintColor = .white
 
     }
-    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        delegate?.setFavorite(sender: self)
+        isFavorited.toggle()
+        
+        if isFavorited == false {
+            favoriteHeroButton.tintColor = .white
+            favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        } else {
+            favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            favoriteHeroButton.tintColor = .yellow
+        }
+        
+    }
+        
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
