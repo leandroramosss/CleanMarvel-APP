@@ -15,7 +15,7 @@ protocol FavoriteDelegate: class {
 class HeroesTableViewCell: UITableViewCell {
     
     var viewController: HomeViewController?
-    var isFavorited: Bool = false
+//    var isFavorited: Bool = false
     
     @IBOutlet weak var favoriteHeroButton: UIButton!
     @IBOutlet weak var heroImageView: UIImageView!
@@ -52,18 +52,20 @@ class HeroesTableViewCell: UITableViewCell {
         favoriteHeroButton.tintColor = .white
 
     }
-    @IBAction func favoriteButtonTapped(_ sender: Any) {
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.setFavorite(sender: self)
-        isFavorited.toggle()
         
-        if isFavorited == false {
+        if sender.isSelected {
+            sender.isSelected = false
             favoriteHeroButton.tintColor = .white
             favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
         } else {
+            sender.isSelected = true
             favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
             favoriteHeroButton.tintColor = .yellow
+
         }
-        
+                
     }
         
     required init?(coder aDecoder: NSCoder) {

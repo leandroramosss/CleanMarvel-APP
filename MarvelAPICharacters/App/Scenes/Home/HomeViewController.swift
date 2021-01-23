@@ -13,7 +13,7 @@ protocol HomeViewControllerDisplayLogic: class {
 }
 
 class HomeViewController: UIViewController {
-    
+        
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -52,7 +52,6 @@ class HomeViewController: UIViewController {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
-        
     }
     
     override func viewDidLoad() {
@@ -63,7 +62,6 @@ class HomeViewController: UIViewController {
         configureTableView()
         searchBar.delegate = self
         tableView.delegate = self
-//        errorView.hide()
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
@@ -81,11 +79,10 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
     
     func displayFetchedHeroesData(viewModel: HomeViewControllerModels.FetchCharacterData.ViewModel) {
         tableViewDataSource?.heroData = viewModel.displayedCharacters
-        
         if viewModel.displayedCharacters.count == 0 {
-//            errorView.show()
+            errorView.show()
         } else {
-//            errorView.hide()
+            errorView.hide()
         }
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
@@ -94,15 +91,13 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
     }
     
     func displayFetchedData(viewModel: HomeViewControllerModels.FetchData.ViewModel) {
-        
         tableViewDataSource?.heroData = viewModel.displayedCharacters
         if viewModel.displayedCharacters.count == 0 {
-            print("no result show")
+            errorView.show()
         } else {
-            print("results hide")
+            errorView.hide()
         }
         activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
         tableView.reloadData()
     }
     
@@ -143,6 +138,7 @@ extension HomeViewController: UISearchBarDelegate {
         let request = HomeViewControllerModels.FetchData.Request(characterToSearch: searchText)
         interactor?.serachCharacter(request: request)
         dismissKeyboard()
+        tableView.reloadData()
     }
     
 }
