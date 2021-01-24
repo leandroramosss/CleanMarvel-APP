@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		058478415B8CB4388855E035 /* Pods_MarvelAPICharacters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47E23091D731B4DA40089E /* Pods_MarvelAPICharacters.framework */; };
 		5048BA0393B3B5F568B3C3FF /* Pods_MarvelAPICharactersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B783DAB671506F53FFDDAC0C /* Pods_MarvelAPICharactersTests.framework */; };
+		523B684625BDE1D90035747A /* DetailsViewControllerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B684525BDE1D90035747A /* DetailsViewControllerWorkerTests.swift */; };
+		523B685425BDE46A0035747A /* DetailsViewControllerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B685325BDE46A0035747A /* DetailsViewControllerPresenterTests.swift */; };
 		523D264B25BC71DA006E5B2F /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523D264A25BC71DA006E5B2F /* Extension+View.swift */; };
 		5263491E25B8558800F71573 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263491D25B8558800F71573 /* Extension+String.swift */; };
 		5263492425B859D300F71573 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263492325B859D300F71573 /* Constants.swift */; };
@@ -75,6 +77,8 @@
 		151AC42C135909CA12C7911B /* Pods-MarvelAPICharactersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPICharactersTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelAPICharactersTests/Pods-MarvelAPICharactersTests.release.xcconfig"; sourceTree = "<group>"; };
 		2557D02F668A21894520507B /* Pods-MarvelAPICharacters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAPICharacters.release.xcconfig"; path = "Target Support Files/Pods-MarvelAPICharacters/Pods-MarvelAPICharacters.release.xcconfig"; sourceTree = "<group>"; };
 		26B432D51DDDB604F32AF72F /* Pods_MarvelAPICharacters_MarvelAPICharactersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelAPICharacters_MarvelAPICharactersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523B684525BDE1D90035747A /* DetailsViewControllerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerWorkerTests.swift; sourceTree = "<group>"; };
+		523B685325BDE46A0035747A /* DetailsViewControllerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerPresenterTests.swift; sourceTree = "<group>"; };
 		523D264A25BC71DA006E5B2F /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		5263491D25B8558800F71573 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		5263492325B859D300F71573 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 			children = (
 				5295048A25BD0E7100AC264F /* DetailsHomeViewControllerTest.swift */,
 				5295048F25BD185E00AC264F /* DetailsViewControllerInteractorTests.swift */,
+				523B684525BDE1D90035747A /* DetailsViewControllerWorkerTests.swift */,
+				523B685325BDE46A0035747A /* DetailsViewControllerPresenterTests.swift */,
 			);
 			path = DetailsTests;
 			sourceTree = "<group>";
@@ -653,10 +659,12 @@
 				5295048B25BD0E7100AC264F /* DetailsHomeViewControllerTest.swift in Sources */,
 				5295049025BD185E00AC264F /* DetailsViewControllerInteractorTests.swift in Sources */,
 				52895EDA25B6298600942F92 /* MarvelAPICharactersTests.swift in Sources */,
+				523B684625BDE1D90035747A /* DetailsViewControllerWorkerTests.swift in Sources */,
 				5295047825BCE76400AC264F /* HomeViewControllerInteractorTests.swift in Sources */,
 				5295046A25BCE08500AC264F /* HomeViewControllerTests.swift in Sources */,
 				5295047D25BCEE4500AC264F /* HomeViewControllerWorkerTests.swift in Sources */,
 				5295048225BCF75F00AC264F /* HomeViewControllerPresenterTests.swift in Sources */,
+				523B685425BDE46A0035747A /* DetailsViewControllerPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

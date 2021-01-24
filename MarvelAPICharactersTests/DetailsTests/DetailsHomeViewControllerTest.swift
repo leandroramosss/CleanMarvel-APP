@@ -70,6 +70,8 @@ class DetailsHomeViewControllerTest: XCTestCase {
     }
     
     func testDisplayCharacter() {
+        let dataSource = ResourceCollectionDataSource()
+        let delegate = ResourceCollectionDelegate()
         let mock = Mock.CharacterMock()
         let venom = mock.venom
         
@@ -77,8 +79,7 @@ class DetailsHomeViewControllerTest: XCTestCase {
         
         loadView()
         sut.displayedCharacter(viewModel: viewModel)
-//        sut.requestComics(viewModel: viewModel)
         XCTAssertEqual(sut.heroNameLabel.text, venom.name, "displaySomething(viewModel:) should update the name text field")
     }
-        
+            
 }
