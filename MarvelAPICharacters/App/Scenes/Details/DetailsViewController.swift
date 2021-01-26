@@ -48,6 +48,7 @@ class DetailsViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        
     }
     
     private func setup() {
@@ -121,5 +122,7 @@ extension DetailsViewController: DetailsViewControllerDisplayLogic {
         }
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

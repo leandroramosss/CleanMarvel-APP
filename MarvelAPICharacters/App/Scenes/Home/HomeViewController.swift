@@ -73,9 +73,11 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
         print(cell.heroNameLabel.text!)
         print("in datasource first, and themin controller")
         
-        
     }
     
+    func reloadDataTableView() {
+        tableView.reloadData()
+    }
     
     func displayFetchedHeroesData(viewModel: HomeViewControllerModels.FetchCharacterData.ViewModel) {
         tableViewDataSource?.heroData = viewModel.displayedCharacters
@@ -86,7 +88,7 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
         }
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        tableView.reloadData()
+        reloadDataTableView()
         
     }
     
@@ -98,7 +100,7 @@ extension HomeViewController: HomeViewControllerDisplayLogic {
             errorView.hide()
         }
         activityIndicator.stopAnimating()
-        tableView.reloadData()
+        reloadDataTableView()
     }
     
     func configureTableView() {
@@ -138,7 +140,7 @@ extension HomeViewController: UISearchBarDelegate {
         let request = HomeViewControllerModels.FetchData.Request(characterToSearch: searchText)
         interactor?.serachCharacter(request: request)
         dismissKeyboard()
-        tableView.reloadData()
+        reloadDataTableView()
     }
     
 }

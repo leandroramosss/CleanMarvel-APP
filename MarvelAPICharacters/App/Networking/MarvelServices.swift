@@ -83,6 +83,7 @@ final class MarvelServices {
                     }
             case .failure(let error):
                 completion(nil, error)
+                print("erro")
             }
         }
     }

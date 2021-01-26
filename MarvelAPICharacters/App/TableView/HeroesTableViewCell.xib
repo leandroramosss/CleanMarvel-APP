@@ -41,7 +41,7 @@
                             <imageReference key="image" image="star" catalog="system" renderingMode="template"/>
                         </state>
                         <connections>
-                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cyH-5Q-fB8"/>
+                            <action selector="favoriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0ri-DW-5PH"/>
                         </connections>
                     </button>
                 </subviews>
@@ -60,7 +60,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="favoriteHeroButton" destination="Pt2-Cx-X3F" id="maz-Gp-7IG"/>
+                <outlet property="favoriteHeroButton" destination="Pt2-Cx-X3F" id="Zpl-7h-oy8"/>
                 <outlet property="heroImageView" destination="eTJ-BH-SSB" id="XWg-AB-tdl"/>
                 <outlet property="heroNameLabel" destination="DzQ-1o-FvE" id="zZA-kZ-yLT"/>
             </connections>

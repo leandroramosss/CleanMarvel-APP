@@ -15,7 +15,9 @@ protocol FavoriteDelegate: class {
 class HeroesTableViewCell: UITableViewCell {
     
     var viewController: HomeViewController?
-//    var isFavorited: Bool = false
+    var isFavorited: Bool = false
+    
+//    let indexPath :NSIndexPath = (self.superview! as! UITableView).indexPath(for: self)! as NSIndexPath
     
     @IBOutlet weak var favoriteHeroButton: UIButton!
     @IBOutlet weak var heroImageView: UIImageView!
@@ -55,17 +57,31 @@ class HeroesTableViewCell: UITableViewCell {
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.setFavorite(sender: self)
         
-        if sender.isSelected {
-            sender.isSelected = false
+        let indexPath :NSIndexPath = (self.superview! as! UITableView).indexPath(for: self)! as NSIndexPath
+        
+        if favoriteHeroButton.isSelected {
             favoriteHeroButton.tintColor = .white
             favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
+            Utility.Instance.checkedCells.append(indexPath.row)
         } else {
-            sender.isSelected = true
-            favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            favoriteHeroButton.tintColor = .yellow
-
+            if let index = Utility.Instance.checkedCells.firstIndex(of: indexPath.row) {
+                Utility.Instance.checkedCells.remove(at: index)
+                favoriteHeroButton.tintColor = .yellow
+                favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            }
+            
         }
-                
+        favoriteHeroButton.isSelected = !favoriteHeroButton.isSelected
+    }
+    
+    func bordedStar() {
+        favoriteHeroButton.tintColor = .white
+        favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func fillStar() {
+        favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        favoriteHeroButton.tintColor = .yellow
     }
         
     required init?(coder aDecoder: NSCoder) {
@@ -81,7 +97,10 @@ class HeroesTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         self.heroImageView.kf.cancelDownloadTask()
         self.heroImageView.image = nil
+        favoriteHeroButton.tintColor = .white
+        favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
         super.prepareForReuse()
+
     }
     
 }
