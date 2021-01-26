@@ -25,14 +25,11 @@ class HeroesTableDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let nibName = UINib(nibName: cellNibName, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: reuseIdentifier)
+        
         let cell: HeroesTableViewCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! HeroesTableViewCell
-        if Utility.Instance.checkedCells.contains(indexPath.row){
-//            cell.checkBtn.isSelected = true
-            cell.favoriteHeroButton.isSelected = true
-        }
         cell.delegate = self
         cell.heroesData = heroData[indexPath.row]
-        
+                
         return cell
         
     }

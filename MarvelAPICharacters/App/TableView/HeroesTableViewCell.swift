@@ -57,31 +57,17 @@ class HeroesTableViewCell: UITableViewCell {
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.setFavorite(sender: self)
         
-        let indexPath :NSIndexPath = (self.superview! as! UITableView).indexPath(for: self)! as NSIndexPath
-        
-        if favoriteHeroButton.isSelected {
+        if sender.isSelected {
+            sender.isSelected = false
             favoriteHeroButton.tintColor = .white
             favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
-            Utility.Instance.checkedCells.append(indexPath.row)
         } else {
-            if let index = Utility.Instance.checkedCells.firstIndex(of: indexPath.row) {
-                Utility.Instance.checkedCells.remove(at: index)
-                favoriteHeroButton.tintColor = .yellow
-                favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            }
-            
+            sender.isSelected = true
+            favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            favoriteHeroButton.tintColor = .yellow
+
         }
-        favoriteHeroButton.isSelected = !favoriteHeroButton.isSelected
-    }
-    
-    func bordedStar() {
-        favoriteHeroButton.tintColor = .white
-        favoriteHeroButton.setImage(UIImage(systemName: "star"), for: .normal)
-    }
-    
-    func fillStar() {
-        favoriteHeroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        favoriteHeroButton.tintColor = .yellow
+                
     }
         
     required init?(coder aDecoder: NSCoder) {
